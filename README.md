@@ -44,7 +44,7 @@
 - Beautiful modal UI with game info
 
 ### 🛡️ Admin Panel (`admin.html`)
-- Secure login (default: `admin` / `admin123`)
+- Secure login
 - **Dashboard** with stats overview
 - **Manage Games** table with edit/delete
 - **Add New Game** form with image preview
