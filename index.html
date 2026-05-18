@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Game Hub Store – Download and Buy Latest PC & Android Games. Best gaming store online." />
+  <meta name="keywords" content="games, download games, buy games, PC games, Android games, action games, racing games" />
+  <title>GAME HUB STORE – Download & Buy Latest Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loader" class="loader-overlay">
+  <div class="loader-content">
+    <div class="loader-logo">GAME HUB</div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+    <div class="loader-text">Initializing...</div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon"><i class="fas fa-gamepad"></i></span>
+      <span class="logo-text">GAME<span class="accent">HUB</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#games" class="nav-link"><i class="fas fa-dice"></i> Games</a></li>
+      <li><a href="#categories" class="nav-link"><i class="fas fa-th-large"></i> Categories</a></li>
+      <li><a href="#top-downloads" class="nav-link"><i class="fas fa-fire"></i> Top Downloads</a></li>
+      <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li><a href="admin.html" class="nav-link admin-link"><i class="fas fa-shield-alt"></i> Admin</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+        <i class="fas fa-sun" id="themeIcon"></i>
+      </button>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-glow glow-1"></div>
+    <div class="hero-glow glow-2"></div>
+    <div class="hero-glow glow-3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge"><i class="fas fa-bolt"></i> NEW GAMES ADDED DAILY</div>
+    <h1 class="hero-title">
+      <span class="title-line">GAME HUB</span>
+      <span class="title-line accent-line">STORE</span>
+    </h1>
+    <p class="hero-subtitle">Download and Buy Latest <span class="highlight">PC & Android</span> Games</p>
+    <p class="hero-desc">The ultimate gaming destination. Thousands of games, instant downloads, unbeatable prices.</p>
+    <div class="hero-buttons">
+      <a href="#games" class="btn btn-primary"><i class="fas fa-play"></i> Browse Games</a>
+      <a href="#top-downloads" class="btn btn-ghost"><i class="fas fa-fire"></i> Top Downloads</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num" data-count="1250">0</span><span class="stat-label">Games</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num" data-count="85000">0</span><span class="stat-label">Downloads</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num" data-count="42000">0</span><span class="stat-label">Players</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll"><i class="fas fa-chevron-down"></i></div>
+</section>
+
+<!-- FEATURED SLIDER -->
+<section class="featured-section" id="featured">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i class="fas fa-star"></i> Featured</span>
+      <h2 class="section-title">HOT <span class="accent">RIGHT NOW</span></h2>
+    </div>
+    <div class="slider-wrapper">
+      <div class="slider-track" id="featuredSlider"></div>
+      <button class="slider-btn slider-prev" id="sliderPrev"><i class="fas fa-chevron-left"></i></button>
+      <button class="slider-btn slider-next" id="sliderNext"><i class="fas fa-chevron-right"></i></button>
+      <div class="slider-dots" id="sliderDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories-section" id="categories">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i class="fas fa-th-large"></i> Browse</span>
+      <h2 class="section-title">GAME <span class="accent">CATEGORIES</span></h2>
+    </div>
+    <div class="categories-grid" id="categoriesGrid"></div>
+  </div>
+</section>
+
+<!-- SEARCH & FILTER -->
+<section class="search-section" id="games">
+  <div class="container">
+    <div class="search-bar-wrapper">
+      <div class="search-input-group">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Search games..." class="search-input" />
+        <button class="search-clear" id="searchClear"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="filter-group">
+        <select id="categoryFilter" class="filter-select">
+          <option value="">All Categories</option>
+          <option value="Action">Action</option>
+          <option value="Football">Football</option>
+          <option value="Racing">Racing</option>
+          <option value="Horror">Horror</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Offline">Offline Games</option>
+          <option value="Android">Android Games</option>
+          <option value="PC">PC Games</option>
+        </select>
+        <select id="sortFilter" class="filter-select">
+          <option value="newest">Newest First</option>
+          <option value="popular">Most Popular</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="rating">Top Rated</option>
+        </select>
+      </div>
+    </div>
+    <div class="results-info" id="resultsInfo"></div>
+  </div>
+</section>
+
+<!-- GAMES GRID -->
+<section class="games-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i class="fas fa-dice"></i> Library</span>
+      <h2 class="section-title">ALL <span class="accent">GAMES</span></h2>
+    </div>
+    <div class="games-grid" id="gamesGrid">
+      <div class="loading-games"><div class="spin"></div> Loading games...</div>
+    </div>
+    <div class="load-more-wrap">
+      <button class="btn btn-ghost" id="loadMoreBtn"><i class="fas fa-plus"></i> Load More Games</button>
+    </div>
+  </div>
+</section>
+
+<!-- TOP DOWNLOADS -->
+<section class="top-section" id="top-downloads">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i class="fas fa-fire"></i> Trending</span>
+      <h2 class="section-title">TOP <span class="accent">DOWNLOADS</span></h2>
+    </div>
+    <div class="top-grid" id="topGrid"></div>
+  </div>
+</section>
+
+<!-- PAYMENT SECTION -->
+<section class="payment-section" id="payment">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i class="fas fa-credit-card"></i> Secure</span>
+      <h2 class="section-title">PAYMENT <span class="accent">METHODS</span></h2>
+    </div>
+    <div class="payment-cards">
+      <div class="payment-card" onclick="openPayment('mpesa')">
+        <div class="payment-icon mpesa-color"><i class="fas fa-mobile-alt"></i></div>
+        <div class="payment-name">M-Pesa</div>
+        <div class="payment-desc">Pay via M-Pesa mobile money</div>
+        <div class="payment-badge">Instant</div>
+      </div>
+      <div class="payment-card" onclick="openPayment('tigopesa')">
+        <div class="payment-icon tigo-color"><i class="fas fa-sim-card"></i></div>
+        <div class="payment-name">Tigo Pesa</div>
+        <div class="payment-desc">Pay via Tigo Pesa wallet</div>
+        <div class="payment-badge">Instant</div>
+      </div>
+      <div class="payment-card" onclick="openPayment('airtel')">
+        <div class="payment-icon airtel-color"><i class="fas fa-wifi"></i></div>
+        <div class="payment-name">Airtel Money</div>
+        <div class="payment-desc">Pay via Airtel Money</div>
+        <div class="payment-badge">Instant</div>
+      </div>
+      <div class="payment-card" onclick="openPayment('paypal')">
+        <div class="payment-icon paypal-color"><i class="fab fa-paypal"></i></div>
+        <div class="payment-name">PayPal</div>
+        <div class="payment-desc">Secure international payments</div>
+        <div class="payment-badge">Global</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i class="fas fa-headset"></i> Support</span>
+      <h2 class="section-title">CONTACT <span class="accent">US</span></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        <p>Have questions about a game or payment? We're here 24/7 to help you.</p>
+        <div class="contact-buttons">
+          <a href="https://wa.me/255700000000" class="contact-btn whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="https://t.me/gamehubstore" class="contact-btn telegram" target="_blank">
+            <i class="fab fa-telegram"></i> Telegram
+          </a>
+          <a href="mailto:info@gamehubstore.com" class="contact-btn email">
+            <i class="fas fa-envelope"></i> Email Us
+          </a>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-icon" title="Discord"><i class="fab fa-discord"></i></a>
+        </div>
+      </div>
+      <div class="contact-form">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Enter your name" class="form-input" />
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="Enter your email" class="form-input" />
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Write your message..." class="form-input" rows="4"></textarea>
+        </div>
+        <button class="btn btn-primary" onclick="sendMessage()"><i class="fas fa-paper-plane"></i> Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <span class="logo-icon"><i class="fas fa-gamepad"></i></span>
+          <span class="logo-text">GAME<span class="accent">HUB</span></span>
+        </div>
+        <p>The ultimate gaming store. Download and buy the latest PC & Android games at the best prices.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#games">Games</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#">Action Games</a></li>
+          <li><a href="#">Racing Games</a></li>
+          <li><a href="#">Android Games</a></li>
+          <li><a href="#">PC Games</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 GameHub Store. All rights reserved. Built with <i class="fas fa-heart" style="color:#e94560"></i> for gamers.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- GAME MODAL -->
+<div class="modal-overlay" id="gameModal">
+  <div class="modal-box" id="gameModalBox">
+    <button class="modal-close" onclick="closeModal('gameModal')"><i class="fas fa-times"></i></button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- PAYMENT MODAL -->
+<div class="modal-overlay" id="paymentModal">
+  <div class="modal-box payment-modal-box">
+    <button class="modal-close" onclick="closeModal('paymentModal')"><i class="fas fa-times"></i></button>
+    <div id="paymentContent"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
